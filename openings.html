@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sacrifices — Ethiopian Illuminati</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="images/elu.jpg" alt="Ethiopian Illuminati logo" onerror="this.style.display='none'">
+      <span class="brand-word">Ethiopian<span class="brand-accent">Illuminati</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="index.html#how" data-i18n="nav.how">How it works</a>
+    </nav>
+    <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch to Amharic">አማ</button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="openings-section">
+  <div class="wrap">
+    <p class="kicker" data-i18n="openings.kicker">Current openings</p>
+    <h1 class="openings-title" data-i18n="openings.title">Roles employers are hiring for right now.</h1>
+
+    <div class="openings-gate" id="openingsGate" hidden>
+      <p id="openingsGateMessage"></p>
+      <a class="btn btn-primary" href="register.html" data-i18n="openings.gateRegisterCta">Register now</a>
+    </div>
+
+    <div id="openingsContent" hidden>
+      <p id="openingsStatus" class="form-status" role="status" aria-live="polite"></p>
+
+      <div class="openings-grid" id="openingsGrid"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <p>&copy; 2026 Horizon Workforce.</p>
+    <p><a href="mailto:contact@horizonworkforce.com">contact@horizonworkforce.com</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="i18n.js"></script>
+<script src="openings.js"></script>
+<script src="nav.js"></script>
+<script src="whatsapp.js"></script>
+</body>
+</html>

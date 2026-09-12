@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethiopian Illuminati-Registration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="images/elu.jpg" alt="Ethiopian Illuminati logo" onerror="this.style.display='none'">
+      <span class="brand-word">Ethiopian<span class="brand-accent">Illuminati</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+    </nav>
+    <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch to Amharic">አማ</button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="register-section">
+  <div class="wrap register-grid">
+    <div class="register-intro">
+      <p class="kicker" data-i18n="register.kicker">Membership Registration</p>
+      <h1 data-i18n-html="register.headline">Let's get your<br>profile in front of <br> Ethiopian Illuminati society.</h1>
+      <p class="lede" data-i18n="register.lede">Fields marked * are required.</p>
+    </div>
+
+    <form id="registerForm" class="register-form" novalidate>
+
+      <div id="lastRegistrationBanner" class="resume-banner" hidden>
+        <p data-i18n="lastReg.message">You already have a registration with us.</p>
+        <div class="resume-banner-actions">
+          <a href="#" class="btn btn-primary btn-sm" id="lastRegistrationLink" data-i18n="lastReg.viewStatus">View my status</a>
+        </div>
+      </div>
+
+      <div id="resumeBanner" class="resume-banner" hidden>
+        <p data-i18n="resume.message">You started a registration earlier and didn't finish. Continue where you left off?</p>
+        <div class="resume-banner-actions">
+          <button type="button" class="btn btn-primary btn-sm" id="resumeContinueBtn" data-i18n="resume.continue">Continue</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="resumeStartOverBtn" data-i18n="resume.startOver">Start over</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="fullName" data-i18n="form.fullName">Full name *</label>
+        <input type="text" id="fullName" name="fullName" required>
+      </div>
+
+      <div class="form-row two-col">
+        <div>
+          <label for="phone" data-i18n="form.phone">Phone number *</label>
+          <input type="tel" id="phone" name="phone" placeholder="+251 9XX XXX XXX" required>
+        </div>
+        <div>
+          <label for="email" data-i18n="form.email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+      </div>
+
+      <div class="form-row two-col">
+        <div>
+          <label for="dob" data-i18n="form.dob">Date of birth *</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+        <div>
+          <label for="gender" data-i18n="form.gender">Gender</label>
+          <select id="gender" name="gender">
+            <option value="" data-i18n="gender.preferNot">Prefer not to say</option>
+            <option value="female" data-i18n="gender.female">Female</option>
+            <option value="male" data-i18n="gender.male">Male</option>
+            <option value="other" data-i18n="gender.other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="location" data-i18n="form.location">City / region *</label>
+        <input type="text" id="location" name="location" required>
+      </div>
+
+      <div class="form-row two-col">
+        <div>
+          <label for="bankAccountName">Bank account name *</label>
+          <input type="text" id="bankAccountName" name="bankAccountName" placeholder="Name on the bank account" required>
+        </div>
+        <div>
+          <label for="bankAccountNumber">Bank account number *</label>
+          <input type="text" id="bankAccountNumber" name="bankAccountNumber" inputmode="numeric" placeholder="Bank account number" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="photo" data-i18n="form.photo">Profile photo *</label>
+        <div class="file-field" data-field="photo">
+          <input type="file" id="photo" name="photo" accept="image/*" class="file-field-input" required>
+          <div class="file-dropzone" tabindex="0" role="button" aria-label="Choose profile photo">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2.5M12 3v12m0-12 4 4m-4-4-4 4"/></svg>
+            <span data-i18n="upload.click">Click to upload</span>
+          </div>
+          <div class="file-field-actions" hidden>
+            <button type="button" class="btn btn-ghost btn-sm file-change-btn" data-i18n="upload.change">Change</button>
+            <button type="button" class="btn btn-ghost btn-sm file-remove-btn" data-i18n="upload.remove">Remove</button>
+          </div>
+        </div>
+      </div>
+      <p class="field-hint" data-i18n="hint.acceptedFileSingle">Accepted: JPG, PNG, or PDF. Max 5MB.</p>
+
+      <div class="form-row two-col">
+        <div>
+          <label for="idDocumentFront" data-i18n="form.idDocumentFront">ID document — front *</label>
+          <div class="file-field" data-field="idDocumentFront">
+            <input type="file" id="idDocumentFront" name="idDocumentFront" accept="image/*,application/pdf" class="file-field-input" required>
+            <div class="file-dropzone" tabindex="0" role="button" aria-label="Choose front of ID document">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2.5M12 3v12m0-12 4 4m-4-4-4 4"/></svg>
+              <span data-i18n="upload.click">Click to upload</span>
+            </div>
+            <div class="file-field-actions" hidden>
+              <button type="button" class="btn btn-ghost btn-sm file-change-btn" data-i18n="upload.change">Change</button>
+              <button type="button" class="btn btn-ghost btn-sm file-remove-btn" data-i18n="upload.remove">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="idDocumentBack" data-i18n="form.idDocumentBack">ID document — back *</label>
+          <div class="file-field" data-field="idDocumentBack">
+            <input type="file" id="idDocumentBack" name="idDocumentBack" accept="image/*,application/pdf" class="file-field-input" required>
+            <div class="file-dropzone" tabindex="0" role="button" aria-label="Choose back of ID document">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2.5M12 3v12m0-12 4 4m-4-4-4 4"/></svg>
+              <span data-i18n="upload.click">Click to upload</span>
+            </div>
+            <div class="file-field-actions" hidden>
+              <button type="button" class="btn btn-ghost btn-sm file-change-btn" data-i18n="upload.change">Change</button>
+              <button type="button" class="btn btn-ghost btn-sm file-remove-btn" data-i18n="upload.remove">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="field-hint" data-i18n="hint.acceptedFiles">Accepted: JPG, PNG, or PDF. Max 5MB each.</p>
+
+      <div class="form-row">
+        <label for="receipt" data-i18n="form.receipt">Registration fee payment receipt *</label>
+        <div class="payment-box">
+          <p class="payment-box-title" data-i18n="payment.title">Send the registration fee to:</p>
+          <dl class="payment-details">
+            <div><dt data-i18n="payment.bank">Bank</dt><dd id="paymentBankName" data-i18n="payment.loading">Loading…</dd></div>
+            <div><dt data-i18n="payment.accountName">Account name</dt><dd id="paymentAccountName" data-i18n="payment.loading">Loading…</dd></div>
+            <div><dt data-i18n="payment.accountNumber">Account number</dt><dd id="paymentAccountNumber" data-i18n="payment.loading">Loading…</dd></div>
+          </dl>
+          <p class="field-hint field-hint--upload" data-i18n="payment.uploadHint">Upload proof of payment below after sending.</p>
+        </div>
+        <div class="file-field" data-field="receipt">
+          <input type="file" id="receipt" name="receipt" accept="image/*,application/pdf" class="file-field-input" required>
+          <div class="file-dropzone" tabindex="0" role="button" aria-label="Choose payment receipt">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16.5V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2.5M12 3v12m0-12 4 4m-4-4-4 4"/></svg>
+            <span data-i18n="upload.click">Click to upload</span>
+          </div>
+          <div class="file-field-actions" hidden>
+            <button type="button" class="btn btn-ghost btn-sm file-change-btn" data-i18n="upload.change">Change</button>
+            <button type="button" class="btn btn-ghost btn-sm file-remove-btn" data-i18n="upload.remove">Remove</button>
+          </div>
+        </div>
+      </div>
+      <p class="field-hint" data-i18n="hint.acceptedFileSingle">Accepted: JPG, PNG, or PDF. Max 5MB.</p>
+
+      <div class="form-row fingerprint-row">
+        <button type="button" class="fingerprint-btn" id="fingerprintBtn" aria-pressed="false">
+          <svg viewBox="0 0 100 100" width="48" height="58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- closed concentric loops, like a real whorl-pattern thumbprint,
+                 filling the whole pad rather than a few open arcs to one side -->
+            <ellipse cx="50" cy="52" rx="34" ry="40" stroke="currentColor" stroke-width="3" opacity="0.95"/>
+            <ellipse cx="50" cy="52" rx="28" ry="33" stroke="currentColor" stroke-width="3" opacity="0.9"/>
+            <ellipse cx="50" cy="52" rx="22" ry="26" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+            <ellipse cx="50" cy="52" rx="16" ry="19" stroke="currentColor" stroke-width="3" opacity="0.8"/>
+            <ellipse cx="50" cy="52" rx="10" ry="12" stroke="currentColor" stroke-width="3" opacity="0.75"/>
+            <ellipse cx="50" cy="52" rx="4.5" ry="5.5" stroke="currentColor" stroke-width="3" opacity="0.7"/>
+            <circle cx="50" cy="52" r="1.4" fill="currentColor"/>
+          </svg>
+        </button>
+        <span class="field-hint fingerprint-hint" id="fingerprintStatus" data-i18n="form.fingerprintHint">Press and hold to verify your identity</span>
+      </div>
+
+      <div class="form-row consent">
+        <label class="checkbox-row">
+          <input type="checkbox" id="consent" name="consent" required>
+          <span data-i18n="form.consent">I agree to be contacted by Horizon Workforce and matched employers about job opportunities.</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" data-i18n="form.submit">Submit Registration</button>
+      <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="register-form confirm-panel" id="confirmPanel" hidden>
+      <p class="kicker" data-i18n="confirm.received">Registration received</p>
+      <h2 class="confirm-panel-title" data-i18n="confirm.title">You're in the system.</h2>
+      <p class="lede lede--confirm" data-i18n="confirm.lede">Save this link — it's the only way to check your status later.
+      If you gave an email, we've also sent it to you.</p>
+
+      <div class="form-row">
+        <label for="confirmLink" data-i18n="confirm.linkLabel">Your registration link</label>
+        <div class="confirm-link-row">
+          <input type="text" id="confirmLink" readonly>
+          <button type="button" class="btn btn-ghost" id="copyLinkBtn" data-i18n="confirm.copy">Copy</button>
+        </div>
+        <p id="copyStatus" class="field-hint field-hint--copy-status"></p>
+      </div>
+
+      <a class="btn btn-primary" id="viewConfirmBtn" href="#" target="_blank" rel="noopener" data-i18n="confirm.openLink">Open my registration</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-col footer-brand">
+      <a class="brand" href="index.html">
+        <span class="brand-word">Ethiopian<span class="brand-accent">Illuminati</span></span>
+      </a>
+      <p data-i18n="footer.tagline">Become part of somethin BIG.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+      <ul>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="index.html#how" data-i18n="nav.how">How it works</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.contact">Contact</h4>
+      <ul>
+        <li><a href="mailto:contact@horizonworkforce.com">contact@ethiopianilluminati.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; 2026 Ethiopian Illuminati. <span data-i18n="footer.rights">All rights reserved.</span></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="i18n.js"></script>
+<script src="script.js"></script>
+<script src="nav.js"></script>
+<script src="whatsapp.js"></script>
+</body>
+</html>

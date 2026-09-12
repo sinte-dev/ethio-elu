@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Staff Admin — Ethiopian Illuminati</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="images/elu.jpg" alt="Ethiopian Illuminat logo" onerror="this.style.display='none'">
+      <span class="brand-word">Ethiopian<span class="brand-accent">Illuinati</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Site</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <button class="btn btn-ghost" id="signOutBtn" hidden>Sign out</button>
+  </div>
+</header>
+
+<!-- Login gate -->
+<section class="admin-login-section" id="loginSection">
+  <div class="wrap">
+    <div class="admin-login-card">
+      <p class="kicker">Staff admin</p>
+      <h1 class="admin-login-title">Sign in to review registrations</h1>
+      <p class="lede lede--login">Accounts are created by Ethiopian Illuminati staff directly in
+      Supabase — there's no public sign-up.</p>
+      <form id="loginForm" novalidate>
+        <div class="form-row">
+          <label for="loginEmail">Username</label>
+          <input type="text" id="loginEmail" name="loginEmail" autocomplete="username" autocapitalize="off" spellcheck="false" required>
+        </div>
+        <div class="form-row">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" name="loginPassword" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" id="loginBtn">Sign in</button>
+        <p id="loginStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Dashboard (shown after auth) -->
+<section class="admin-dashboard" id="dashboardSection" hidden>
+  <div class="wrap">
+    <div class="admin-dash-head">
+      <div>
+        <p class="kicker">Staff admin</p>
+        <h1 class="admin-dash-title">Registrations</h1>
+      </div>
+      <div class="admin-summary" id="summaryRow"></div>
+    </div>
+
+    <div class="admin-settings-card">
+      <p class="form-section-label">Site settings</p>
+      <form id="settingsForm">
+        <div class="form-row two-col">
+          <div>
+            <label for="whatsappNumberInput">WhatsApp number (intl. format, no "+")</label>
+            <input type="text" id="whatsappNumberInput" placeholder="251912345678">
+          </div>
+          <div>
+            <label for="paymentAccountNumberInput">Payment account number</label>
+            <input type="text" id="paymentAccountNumberInput" placeholder="0000000000">
+          </div>
+        </div>
+        <div class="form-row two-col">
+          <div>
+            <label for="paymentBankNameInput">Payment bank name</label>
+            <input type="text" id="paymentBankNameInput" placeholder="Your Bank Name">
+          </div>
+          <div>
+            <label for="paymentAccountNameInput">Payment account holder name</label>
+            <input type="text" id="paymentAccountNameInput" placeholder="Your Company Account Name">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-ghost" id="saveSettingsBtn">Save</button>
+        <span id="settingsStatus" class="field-hint"></span>
+      </form>
+    </div>
+
+    <div class="admin-settings-card">
+      <p class="form-section-label">Your login</p>
+      <p class="field-hint">Signed in as <strong id="currentUsernameLabel">—</strong></p>
+      <form id="accountForm">
+        <div class="form-row">
+          <label for="currentPasswordInput">Current password</label>
+          <input type="password" id="currentPasswordInput" autocomplete="current-password" placeholder="Required to confirm any change" required>
+        </div>
+        <div class="form-row two-col">
+          <div>
+            <label for="newUsernameInput">New username</label>
+            <input type="text" id="newUsernameInput" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="Leave blank to keep current">
+          </div>
+          <div>
+            <label for="newPasswordInput">New password</label>
+            <input type="password" id="newPasswordInput" autocomplete="new-password" placeholder="Leave blank to keep current">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="confirmNewPasswordInput">Confirm new password</label>
+          <input type="password" id="confirmNewPasswordInput" autocomplete="new-password" placeholder="Only needed if changing password">
+        </div>
+        <button type="submit" class="btn btn-ghost" id="saveAccountBtn">Update login</button>
+        <span id="accountStatus" class="field-hint"></span>
+      </form>
+    </div>
+
+    <div class="admin-openings-card">
+      <p class="form-section-label">Sacrifices</p>
+      <p class="field-hint">These show on the public page, with the image and description
+      shown when a visitor taps "View details" on a listing.</p>
+
+      <form id="openingForm">
+        <input type="hidden" id="openingIdInput">
+        <div class="form-row">
+          <label for="openingTitleInput">Sacrifice type</label>
+          <input type="text" id="openingTitleInput" placeholder="e.g. Warehouse Loader" required>
+        </div>
+        <div class="form-row">
+          <label for="openingDescriptionInput">Description</label>
+          <textarea id="openingDescriptionInput" rows="3" placeholder="Shown to job seekers when they open the listing"></textarea>
+        </div>
+        <div class="form-row">
+          <label for="openingImageInput">Photo <span class="field-hint">(optional)</span></label>
+          <input type="file" id="openingImageInput" accept="image/*">
+          <div id="openingImagePreviewWrap" class="opening-image-preview-wrap" hidden>
+            <img id="openingImagePreview" class="opening-image-preview" alt="">
+          </div>
+          <span class="field-hint">JPG or PNG, under 5MB.</span>
+        </div>
+        <div class="form-row form-row--checkbox">
+          <label><input type="checkbox" id="openingActiveInput" checked> Show on the public page</label>
+        </div>
+        <button type="submit" class="btn btn-primary" id="saveOpeningBtn">Add scarifice</button>
+        <button type="button" class="btn btn-ghost" id="cancelEditOpeningBtn" hidden>Cancel edit</button>
+        <span id="openingFormStatus" class="field-hint"></span>
+      </form>
+
+      <div class="admin-openings-list" id="openingsAdminList"></div>
+    </div>
+
+    <div class="admin-openings-card">
+      <p class="form-section-label">Sacrifice receipts</p>
+      <p class="field-hint">Receipts upload on the page when applying to a specific sacrifice.</p>
+      <div class="admin-openings-list" id="jobReceiptsAdminList"></div>
+    </div>
+
+    <div class="admin-filters">
+      <input type="search" id="searchInput" placeholder="Search name or phone…">
+      <select id="statusFilter">
+        <option value="">All</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+      <button class="btn btn-ghost" id="refreshBtn" type="button">Refresh</button>
+    </div>
+
+    <p id="dashStatus" class="form-status" role="status" aria-live="polite"></p>
+
+    <div class="admin-table-wrap">
+      <table class="admin-table" id="regTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Submitted</th>
+            <th>Approval</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="regTableBody">
+          <!-- rows injected by admin.js -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Detail modal -->
+<div class="admin-modal-overlay" id="modalOverlay" hidden>
+  <div class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="admin-modal-close" id="modalCloseBtn" aria-label="Close">&times;</button>
+    <div id="modalBody"><!-- injected by admin.js --></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-bottom">
+    <p>&copy; 2026 Ethiopian Illuminati. Staff use only.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
