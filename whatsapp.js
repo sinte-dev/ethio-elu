@@ -20,8 +20,6 @@
   }
 
   if (!number) return;
-
-  const defaultMessage = "Hi, I'd like to ask about registering with Horizon Workforce.";
   const href = `https://wa.me/${number}?text=${encodeURIComponent(defaultMessage)}`;
 
   const link = document.createElement("a");
