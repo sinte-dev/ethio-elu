@@ -373,9 +373,10 @@
   };
 
   function getLang() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    return saved === "am" ? "am" : "en";
-  }
+  const saved = localStorage.getItem(STORAGE_KEY);
+  // Amharic is the default for first-time visitors.
+  return saved === "en" ? "en" : "am";
+}
 
   function t(key) {
     const lang = getLang();
