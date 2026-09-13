@@ -134,7 +134,7 @@ h3{font-size: 1.15rem; margin-bottom: 8px;}
   color: var(--cream);
   padding: 110px 0 0;
   overflow: hidden;
-  background: url('images/hero-bg.jpg') center / cover no-repeat,
+  background: url('images/hero-bg.jpg?v=20260913') center / cover no-repeat,
     linear-gradient(120deg, #0B1626 0%, #10243E 55%, #16304F 100%);
 }
 .hero-overlay{
